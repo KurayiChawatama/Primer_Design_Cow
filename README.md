@@ -123,11 +123,15 @@ _**The results, including the primer tables and sequence data, can be saved to a
 To install and run The Primer Design Cow, follow these steps:
 1. Clone the repository to your local machine.
 
-`git clone https://github.com/KurayiChawatama/Primer_Design_Cow.git`
+```bash
+git clone https://github.com/KurayiChawatama/Primer_Design_Cow.git
+```
 
 2. Navigate to the project directory.
 
-`cd PrimerDesignCow`
+```bash
+cd PrimerDesignCow
+```
 
 3. Install the required dependencies.
 
@@ -135,7 +139,9 @@ To install and run The Primer Design Cow, follow these steps:
 
 4. Run the main script.
 
-`python design_cow.py`
+```bash
+python design_cow.py
+```
 
 ## Usage
 
