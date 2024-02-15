@@ -1,24 +1,24 @@
-``` 
-_____ _          
-|_   _| |__   ___ 
+```
+_____ _
+|_   _| |__   ___
   | | | '_ \ / _ \
   | | | | | |  __/
   |_| |_| |_|\___|
-                  
 
- ____       _                       ____            _             
-|  _ \ _ __(_)_ __ ___   ___ _ __  |  _ \  ___  ___(_) __ _ _ __  
-| |_) | '__| | '_ ` _ \ / _ \ '__| | | | |/ _ \/ __| |/ _` | '_ \ 
+
+ ____       _                       ____            _
+|  _ \ _ __(_)_ __ ___   ___ _ __  |  _ \  ___  ___(_) __ _ _ __
+| |_) | '__| | '_ ` _ \ / _ \ '__| | | | |/ _ \/ __| |/ _` | '_ \
 |  __/| |  | | | | | | |  __/ |    | |_| |  __/\__ \ | (_| | | | |
 |_|   |_|  |_|_| |_| |_|\___|_|    |____/ \___||___/_|\__, |_| |_|
-                                                      |___/       
+                                                      |___/
 
-  ____              _ 
+  ____              _
  / ___|_____      _| |
 | |   / _ \ \ /\ / / |
 | |__| (_) \ V  V /|_|
  \____\___/ \_/\_/ (_)
-                      
+
 
   ____________________________________________________
 | Primer design made easy - by a friendly talking cow! |
@@ -36,6 +36,8 @@ _____ _
 ## Description
 
 **The Primer Design Cow** is a user-friendly Python-based application designed to streamline the process of primer design for PCR (Polymerase Chain Reaction) by offering an engaging and interactive experience for users by utilizing a fun talking cow with a text-to-speech component, which provides audio feedback to the user throughout the process.
+
+#### Video Demo: https://youtu.be/d0Jmv2DhndE
 
 ### Features
 
@@ -76,12 +78,12 @@ _____ _
 **Additional SNP Selection Criteria**
 SNPs are only selectable such that the minimum band size after restriction digestion cleavage at the SNP site is 50 base pairs, ensuring reliable and discernible PCR products.
 
-## Primer Selection Criteria 
+## Primer Selection Criteria
 
 ### Primary Criteria
 
 **As represented by the regular expression:** `^[GC][ATCG]{21,23}[GC]$`
-* The primer length must be between 18 and 25 base pairs. 
+* The primer length must be between 18 and 25 base pairs.
 * The primer must start with a GC clamp (a G or C base).
 * The primer must also end with a G or C base.
 
@@ -111,18 +113,33 @@ SNPs are only selectable such that the minimum band size after restriction diges
 ├─────────────────┼──────────────────────────┼─────────────────┼─────────────────┼──────────────────────────────────┼───────────────────────┼───────────────────────────────────┤
 ```
 
-* Users can select a forward and reverse primer from the tables.  
+* Users can select a forward and reverse primer from the tables.
 * The program will then calculate the suitability  of the selected primer pair making sure that the melting temperature difference is less than 5 degrees and provides feedback about the similarity of the selected primer pair.
 
 _**The results, including the primer tables and sequence data, can be saved to a file for future reference.**_
 
 ## Installation
 
-To begin using Primer Design Cow, simply install the required dependencies and follow the intuitive user interface. 
+To install and run The Primer Design Cow, follow these steps:
+1. Clone the repository to your local machine.
+
+`git clone https://github.com/KurayiChawatama/Primer_Design_Cow.git`
+
+2. Navigate to the project directory.
+
+`cd PrimerDesignCow`
+
+3. Install the required dependencies.
+
+`pip install -r requirements.txt`
+
+4. Run the main script.
+
+`python design_cow.py`
 
 ## Usage
 
-* The program will prompt you to enter a gene accession number. Make sure you enter a valid number and press Enter.
+* The program will prompt you to enter a gene accession number. Make sure you enter a valid number and press Enter. Entering an invalid gene accession number will cause the  program to raise a ValueError and IndexError and exit.
 
 ```
   _________________________________________________
@@ -140,7 +157,7 @@ To begin using Primer Design Cow, simply install the required dependencies and f
                                                         ||     ||
 Enter a Gene Accession Number:
 ```
-* The program will fetch the gene summary data to allow you to confirm that the gene accession number you entered is indeed for the gene you are interested in. Entering an invalid gene accession number will cause the  program to raise a ValueError and IndexError and exit.
+* The program will fetch the gene summary data to allow you to confirm that the gene accession number you entered is indeed for the gene you are interested in.
 
 _**If the gene summary data is not for your intended gene, you can exit the program by Ctrl+C and try again with a different gene accession number.**_
 * If the gene summary data is correct, the program will prompt you to pick a nucleotide position for your SNP then fetch the gene sequence data and calculate potential primers.
@@ -188,13 +205,13 @@ Enter a nucleotide position:
                                                     (__)\       )\/\
                                                         ||----w |
                                                         ||     ||
-Enter the index of the forward primer: 
+Enter the index of the forward primer:
 Enter the index of the reverse primer:
 
 ```
 
 * The program will assess the primer pair suitability and provide audio feedback throughout the process.
-   
+
 _**The program will continuously prompt you to select a forward and reverse primer from the tables until you select a suitable primer pair. If no pair is available exit the program by Ctrl+C and consider using a tool that allows for a wider range of primer selection around the SNP site.**_
 * If the pair is suitable,you will be prompted to save the results. The results will be saved to two files in the project directory one for the primers and one for the gene sequence data.
 
@@ -240,10 +257,25 @@ Would you like to save the files? (y/n): y
 ## Getting an accession number from NCBI
 
 1. Go to the NCBI nucleotide database website (https://www.ncbi.nlm.nih.gov/nuccore).
-![NCBI Nucleotide Database Homepage](main_page.png)
+![NCBI Nucleotide Database Homepage](readme_assets/main_page.png)
 2. Enter the gene name or keyword in the search bar and press Enter.
-![Searching a gene in the NCBI Nucleotide Database](search_gene.png)
+![Searching a gene in the NCBI Nucleotide Database](readme_assets/search_gene.png)
 3. Select the gene of interest 's RefSeq transcripts page from the search results.
-![Selecting the gene of interest from the search results](navigate_to_refseq.png)
+![Selecting the gene of interest from the search results](readme_assets/navigate_to_refseq.png)
 4. Copy the accession number from the gene's RefSeq transcripts page.
-![Copying the gene accession number](copy_accession.png)
+![Copying the gene accession number](readme_assets/copy_accession.png)
+
+
+## Contributions
+
+This project was done as a beginner project for the Final Project of my CS50P course. As such, I greatly appreciate any feedback, suggestions, or contributions you may have to offer. 
+
+ To contribute, please follow these steps:
+ 
+1. Fork the repository.
+2. Create a new branch in your forked repository.
+3. Make your changes or additions in this new branch.
+4. Commit your changes with a meaningful commit message.
+5. Create a pull request, detailing the changes you've made and their purpose.
+
+I look forward to seeing your contributions!

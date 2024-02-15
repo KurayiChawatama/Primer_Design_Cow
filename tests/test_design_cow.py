@@ -1,6 +1,6 @@
 import pytest
-from project import (fetch_gene_summary, fetch_sequence_data, reverse_complement, calculate_cg_percentage,
-                     calculate_melting_temps, count_nucleotides)
+from design_cow import (fetch_gene_summary, fetch_sequence_data, reverse_complement, calculate_cg_percentage,
+                        calculate_melting_temps, count_nucleotides)
 
 
 def test_fetch_gene_summary_true():
