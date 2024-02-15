@@ -93,10 +93,12 @@ SNPs are only selectable such that the minimum band size after restriction diges
 `GC Percentage = (number of G's and C's / total number of nucleotides) * 100`
 
 * calculates the melting temperatures of the potential primers
-`Tm = 4 * (number of G's and C's) + 2 * (number of A's and T's)`
+```
+Tm = 4 * (number of G's and C's) + 2 * (number of A's and T's)
+```
 
 * calculates the similarity (how complimentary they are) of the two potential primers' using the Levenshtein distance algorithm after normalizing the distance value in order to prevent complimentary binding of the primers.
-```
+```python
  levenshtein_distance_algorithm(forward, reverse):
     lev_distance = distance(reverse_complement(forward), reverse)
     similarity = (1 - (lev_distance / max(len(forward), len(reverse)))) * 100
@@ -135,7 +137,9 @@ cd PrimerDesignCow
 
 3. Install the required dependencies.
 
-`pip install -r requirements.txt`
+```bash
+pip install -r requirements.txt
+```
 
 4. Run the main script.
 
