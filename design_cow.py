@@ -82,7 +82,7 @@ def main():
 
 def display_and_speak(*messages):
     global engine
-    message = ''.join(messages)
+    message = " ".join(messages)
     cowsay.cow(message)
     engine.say(message)
     engine.runAndWait()
